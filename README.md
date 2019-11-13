@@ -31,13 +31,13 @@ From the usb port we retrieve the data sent to us by the arduino card to use the
 # Librairies :
 
 ## [termios.h](http://manpagesfr.free.fr/man/man3/termios.3.html) 
-Permet de contrôler les ports séries (pour nous le port USB)
+The termios functions establish a general interface in the form of a terminal, allowing control of the asynchronous communication ports.
 
-Code d'exemple :
+Example code :
 
 `PORT.c_cflag |= CREAD;` 
 
-*Cela nous permet de vérifier la réception de données (PORT étant define)*
+*This allows us to check the reception of data (PORT being defined)*
 
 ## [fcntl.h](http://manpagesfr.free.fr/man/man2/fcntl.2.html) 
 Permet de réaliser des opérations sur le descripteur de fichier
