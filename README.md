@@ -1,11 +1,11 @@
-Descriptif du projet :
+# Descriptif du projet :
 
 Radar créer à l’aide d’Arduino permettant de détecter ou non la présence d’objet et leur distance par rapport à notre radar dans une zone définie.
 Allumage d’une led pour nous avertir qu’un objet est présent.
 Mise en place d’algorithme permettant de calculer la distance entre l’objet et le radar.
 Le tout affiché sur une application en C avec un sonar en mouvement.
 
-FONCTIONNALITES :
+# Fonctionnalités :
 
 -Gestion de fichiers :
 Création d’un fichier stockant toutes les signaux captés par le radar, avec l’heure, le jour et la distance.
