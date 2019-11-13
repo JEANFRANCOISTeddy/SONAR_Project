@@ -1,13 +1,15 @@
 /*
     GNU/Linux et MacOS
         > gcc main.c $(sdl2-config --cflags --libs) -lSDL2_gfx -o prog
-        > gcc *.c $(sdl2-config --cflags --libs) -o prog
+        > gcc *.c $(sdl2-config --cflags --libs) -o prog -lSDL2_ttf -lSDL2_mixer flag compil lib
 
 */
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
+#include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 
 void SDL_ExitWithError(const char *message);
