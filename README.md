@@ -4,29 +4,29 @@ Radar created using Arduino to detect or not the presence of objects and their d
 
 # Features :
 
--Gestion de fichiers :
-Création d’un fichier stockant toutes les signaux captés par le radar, avec l’heure, le jour et la distance.
+-File management :
+Creation of a file storing all signals received by the radar, with time, day and distance.
 
--Fichier de configuration :
-Changer l’angle de recherche (agrandir ou diminuer)
+-Configuration folder :
+Change the search angle (enlarge or reduce).
 
--Détection d’objets :
-La carte Arduino va détecter si il y a ou non un objet en face du radar et allume une led
+-Object detection :
+The Arduino map will detect whether or not there is an object in front of the radar and lights a led.
 
--Affichage d'un objet sur la console :
-Suite à la détection de l'objet l’application va afficher sur le graphique sa position.
+-Displaying an object on the console :
+After the detection of the object, the application will display its position on the graph.
 
--Localisation de l’objet :
-Une fois détecté nous allons afficher les coordonnées de celui-ci sa distance par rapport au radar ainsi qu’à quelle angle il est situé
+-Object's localisation :
+Once detected we will display the coordinates of the latter its distance from the radar as well as the angle at which it is located.
 
--Son :
-Emission d’un son lors de la détection d’un objet
+-Sound :
+Sound's emission when an object is detected.
 
--Balayage :
-Rotation d’une droite dans l’arc de cercle permettant de détecter sur le graphique où se trouve l’objet
+-Scanning :
+Line's rotation in the circle's arc to detect on the graph where the object is located.
 
--Récupération des données du port série :
-Depuis le port usb nous récupérons les données qui nous sont envoyées par la carte arduino pour ainsi les exploiter dans notre programme et les afficher sur le radar
+-Serial port data recovery :
+From the usb port we retrieve the data sent to us by the arduino card to use them in our program and display them on the radar.
 
 # Librairies :
 
