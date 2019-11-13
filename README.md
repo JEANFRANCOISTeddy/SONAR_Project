@@ -10,7 +10,7 @@ Creation of a file storing all signals received by the radar, with time, day and
 -Configuration folder :
 Change the search angle (enlarge or reduce).
 
--Object detection :
+-Object's detection :
 The Arduino map will detect whether or not there is an object in front of the radar and lights a led.
 
 -Displaying an object on the console :
