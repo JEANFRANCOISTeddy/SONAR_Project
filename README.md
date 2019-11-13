@@ -30,6 +30,8 @@ From the usb port we retrieve the data sent to us by the arduino card to use the
 
 # Librairies :
 
+Libraries used for the realization of our project
+
 ## [termios.h](http://manpagesfr.free.fr/man/man3/termios.3.html) 
 The termios functions establish a general interface in the form of a terminal, allowing control of the asynchronous communication ports.
 
