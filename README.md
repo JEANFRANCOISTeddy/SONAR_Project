@@ -93,7 +93,7 @@ Module complémentaire a la SDL2 qui permet de gérer le son sur la SDL2.
 
 Affichage du sonar :
 
-[](https://hackster.imgix.net/uploads/attachments/208605/radar.jpg)
+![](https://hackster.imgix.net/uploads/attachments/208605/radar.jpg)
 
 Branchement des composants :
 
