@@ -40,7 +40,7 @@ Code d'exemple :
 
 `PORT.c_cflag |= CREAD;` 
 
-*cela nous permet de vérifier la réception de données (PORT étant define)*
+*Cela nous permet de vérifier la réception de données (PORT étant define)*
 
 ## [fcntl.h](http://manpagesfr.free.fr/man/man2/fcntl.2.html) 
 Permet de réaliser des opérations sur le descripteur de fichier
@@ -90,4 +90,10 @@ Module complémentaire a la SDL2 qui permet l’ajout de texte sur l’interface
 
 ## [SDL_mixer.h](https://www.libsdl.org/projects/SDL_mixer/docs/SDL_mixer.html) 
 Module complémentaire a la SDL2 qui permet de gérer le son sur la SDL2.
+
+Affichage du sonar :
+
+[](https://hackster.imgix.net/uploads/attachments/208605/radar.jpg)
+
+Branchement des composants :
 
