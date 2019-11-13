@@ -40,50 +40,50 @@ Example code :
 *This allows us to check the reception of data (PORT being defined)*
 
 ## [fcntl.h](http://manpagesfr.free.fr/man/man2/fcntl.2.html) 
-Permet de réaliser des opérations sur le descripteur de fichier
+Allows you to perform operations on the file descriptor
 
-Code d'exemple :
+Example code :
 
 `fd = open(portname, O_RDWR | O_NOCTTY);` 
 
-*Configuration de la lecture de la carte arduino*
+*Configuration de lecture de la carte arduino*
 
 ## [unistd.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/unistd.h.html) 
-Configuration UNIX
+UNIX Configuration
 
 ## [servo.h](https://github.com/arduino-libraries/Servo) 
-Permet à l’arduino de commander des servomoteurs
+Allows the arduino to control servomotors.
 
 `for(i=0;i<5;i++){
     myServo.write(i);
  }
 `
 
-*Pour faire bouger le servomoteur de i position *
+*To move the actuator from i position*
 
 ## [SDL2.h]() 
-Permet de créer une interface avec des fenêtres de gérer des événement de créer des rendue et des surfaces  , tracer des droites , des rectangle et des points.
+Allows to create an interface with windows to manage events, create renderings and surfaces, draw lines, rectangles and points.
 
-Code d'exemple :
+Example code :
 
 `SDL_Window *window = NULL;` 
 
-*Lancement SDL*
+*Launch SDL*
 
 ## [SDL2_gfxPrimitives.h](http://www.ferzkopp.net/Software/SDL2_gfx/Docs/html/_s_d_l2__gfx_primitives_8h.html) 
-Module complémentaire pour SDL2 permettant l’ajout de différentes fonction pour tracer des cercles , des polygon des arc des cercles , et autres figure géométrique.
+Add-on module for SDL2 allowing the addition of different functions to draw circles, polygons, arcs, circles, and other geometric shapes.
 
-Code d'exemple :
+Example code :
 
 `if(arcRGBA(renderer,400,500,100,180,360,0,255,0,255) != 0 ){   
     SDL_ExitWithError("Erreur creation arc 1");
   }
 ` 
 
-*Création d'un arc de cercle*
+*Creating an arc of a circle*
 
 ## [SDL_ttf.h](https://www.libsdl.org/projects/SDL_ttf/docs/SDL_ttf.html) 
-Module complémentaire a la SDL2 qui permet l’ajout de texte sur l’interface graphique
+Add-on module to SDL2 that allows text to be added to the graphical interface.
 
 ## [SDL_mixer.h](https://www.libsdl.org/projects/SDL_mixer/docs/SDL_mixer.html) 
-Module complémentaire a la SDL2 qui permet de gérer le son sur la SDL2.
+Complementary module to SDL2 which allows to manage the sound on SDL2.
