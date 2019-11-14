@@ -68,7 +68,9 @@ Allows to create an interface with windows to manage events, create renderings a
 
 Example code :
 
-`SDL_Window *window = NULL;` 
+`SDL_Window *window = NULL;
+ if(SDL_Init(SDL_INIT_VIDEO) != 0)
+ ` 
 
 *Launch SDL*
 
