@@ -22,6 +22,7 @@ int main(int argc,char **argv)
 
     if(fd == -1)
         printf("Opening : FAIL");
+        exit(1);
     else
         printf("Opening : OK\n");
 
