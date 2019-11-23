@@ -1,6 +1,6 @@
 /*
     GNU/Linux et MacOS
-        > gcc main.c $(sdl2-config --cflags --libs) -lSDL2_gfx -o prog
+        > gcc main.c $(sdl2-config --cflags --libs) -lSDL2_gfx -lSDL2_ttf -o prog
         > gcc *.c $(sdl2-config --cflags --libs) -o prog -lSDL2_ttf -lSDL2_mixer flag compil lib
 
 */
@@ -14,7 +14,7 @@
 
 void SDL_ExitWithError(const char *message);
 
-int i =0;
+
 
 int main(int argc, char **argv)
 
@@ -23,12 +23,22 @@ int main(int argc, char **argv)
 
     SDL_Renderer *renderer = NULL;
 
+    SDL_Surface *sfont = NULL;
+
+    SDL_Texture *tfont = NULL;
+
+
 
     //Lancement SDL
     if(SDL_Init(SDL_INIT_VIDEO) != 0)
 
 
         SDL_ExitWithError("Initialisation SDL");
+
+    if(TTF_Init() !=0)
+
+        SDL_ExitWithError("Erreur Init TTF");
+
 
     //Création fenêtre
     window = SDL_CreateWindow("Sonar",
@@ -37,6 +47,10 @@ int main(int argc, char **argv)
                                 810, //width
                                 600, //height
                                 0); //mode fenetre avec bordure sans etc
+
+
+
+
 
     if(window == NULL){
         SDL_ExitWithError("Creation fenetre echouee");}
@@ -93,30 +107,11 @@ int main(int argc, char **argv)
 
       SDL_ExitWithError("Erreur de creation ligne");
 
-       //2pi
+//2pi
 
     if(SDL_RenderDrawLine(renderer,800,500,400,500) != 0 )
 
        SDL_ExitWithError("Erreur de creation ligne");
-
-//Relier les pt
-
-     /* if(SDL_RenderDrawLine(renderer,(400*-(sqrt(3)/2)+400),500/2,1,500) != 0 )
-
-       SDL_ExitWithError("Erreur de creation ligne");
-
-
-
-      if(SDL_RenderDrawLine(renderer,(400*-(sqrt(3)/2)+400),500/2,200,500-(500*(sqrt(3)/2))) != 0 )
-
-       SDL_ExitWithError("Erreur de creation ligne");
-
-
-
-      if(SDL_RenderDrawLine(renderer,200,500-(500*(sqrt(3)/2)),400,1) != 0 ){
-
-       SDL_ExitWithError("Erreur de creation ligne");} */
-
 
 
         if( arcRGBA(renderer,400,500,100,180,360,0,255,0,255) != 0 ){   //arc1
@@ -140,12 +135,20 @@ int main(int argc, char **argv)
         }
 
 
+    SDL_Color text_color = {0,255,0};
 
-      /* if(circleColor(renderer,0,0,2*M_PI,0x000)!=0)
-        SDL_ExitWithError("Erreur Cercle");*/
+    SDL_Rect rfont = {10,500, 250,50};
 
 
+    TTF_Font * font = TTF_OpenFont("font/font1.ttf",12);
 
+    sfont = TTF_RenderText_Solid(font,"Distance :",text_color);
+    tfont = SDL_CreateTextureFromSurface(renderer,sfont);
+
+   // SDL_QueryTexture(tfont,NULL,NULL,&rfont.w,&rfont.h);
+
+
+    SDL_RenderCopy(renderer,tfont,NULL,&rfont);
  //afficher le rendue mettre a jour
 
     SDL_RenderPresent(renderer);
