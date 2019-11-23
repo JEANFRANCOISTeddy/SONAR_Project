@@ -1,7 +1,6 @@
 /*
-    GNU/Linux et MacOS
-        > gcc main.c $(sdl2-config --cflags --libs) -lSDL2_gfx -lSDL2_ttf -o prog
-        > gcc *.c $(sdl2-config --cflags --libs) -o prog -lSDL2_ttf -lSDL2_mixer flag compil lib
+    GNU/Linux
+        > gcc main.c $(sdl2-config --cflags --libs) -lSDL2_gfx -lSDL2_ttf -lSDL2_mixer -o prog
 
 */
 #include <stdio.h>
@@ -27,18 +26,14 @@ int main(int argc, char **argv)
 
     SDL_Texture *tfont = NULL;
 
-
-
     //Lancement SDL
     if(SDL_Init(SDL_INIT_VIDEO) != 0)
-
 
         SDL_ExitWithError("Initialisation SDL");
 
     if(TTF_Init() !=0)
 
         SDL_ExitWithError("Erreur Init TTF");
-
 
     //Création fenêtre
     window = SDL_CreateWindow("Sonar",
@@ -48,14 +43,8 @@ int main(int argc, char **argv)
                                 600, //height
                                 0); //mode fenetre avec bordure sans etc
 
-
-
-
-
     if(window == NULL){
         SDL_ExitWithError("Creation fenetre echouee");}
-
-
 
     renderer = SDL_CreateRenderer(window, -1,SDL_RENDERER_TARGETTEXTURE); // -1 driver pour affichage
 
@@ -70,7 +59,6 @@ int main(int argc, char **argv)
       SDL_ExitWithError("Erreur de changement de couleur");}
 
 
-
     if(SDL_RenderDrawLine(renderer,1,500,400,500) != 0 ){
 
        SDL_ExitWithError("Erreur de creation ligne");}
@@ -80,7 +68,6 @@ int main(int argc, char **argv)
     if(SDL_RenderDrawLine(renderer,(400*-(sqrt(3)/2)+400),500/2,400,500) != 0 )
 
        SDL_ExitWithError("Erreur de creation ligne");
-
 
 //2pi/3
 
@@ -99,8 +86,6 @@ int main(int argc, char **argv)
 
         SDL_ExitWithError("Erreur de creation ligne");
 
-
-
 //pi/6
 
     if(SDL_RenderDrawLine(renderer,(400*(sqrt(3)/2)+400),500/2,400,500) != 0 )
@@ -113,40 +98,38 @@ int main(int argc, char **argv)
 
        SDL_ExitWithError("Erreur de creation ligne");
 
-
-        if( arcRGBA(renderer,400,500,100,180,360,0,255,0,255) != 0 ){   //arc1
+    if( arcRGBA(renderer,400,500,100,180,360,0,255,0,255) != 0 ){   //arc1
 
         SDL_ExitWithError("Erreur creation arc 1");
-        }
+    }
 
-        if( arcRGBA(renderer,400,500,200,180,360,0,255,0,255) != 0 ){  //arc2
+    if( arcRGBA(renderer,400,500,200,180,360,0,255,0,255) != 0 ){  //arc2
 
         SDL_ExitWithError("Erreur creation arc 2");
-        }
+    }
 
-        if( arcRGBA(renderer,400,500,300,180,360,0,255,0,255) != 0 ){  //arc3
+    if( arcRGBA(renderer,400,500,300,180,360,0,255,0,255) != 0 ){  //arc3
 
         SDL_ExitWithError("Erreur creation arc 3");
-        }
+    }
 
-        if( arcRGBA(renderer,400,500,400,180,360,0,255,0,255) != 0 ){  //arc4
+    if( arcRGBA(renderer,400,500,400,180,360,0,255,0,255) != 0 ){  //arc4
 
         SDL_ExitWithError("Erreur creation arc 4");
-        }
+    }
 
 
     SDL_Color text_color = {0,255,0};
 
     SDL_Rect rfont = {10,500, 250,50};
 
-
     TTF_Font * font = TTF_OpenFont("font/font1.ttf",12);
 
     sfont = TTF_RenderText_Solid(font,"Distance :",text_color);
     tfont = SDL_CreateTextureFromSurface(renderer,sfont);
 
-   // SDL_QueryTexture(tfont,NULL,NULL,&rfont.w,&rfont.h);
-
+    SDL_FreeSurface(sfont);
+// SDL_QueryTexture(tfont,NULL,NULL,&rfont.w,&rfont.h);
 
     SDL_RenderCopy(renderer,tfont,NULL,&rfont);
  //afficher le rendue mettre a jour
@@ -164,7 +147,6 @@ int main(int argc, char **argv)
 
         while(SDL_PollEvent(&event) ) //recup n'importe quel evenement sans bloquer le prog
         {
-
             switch(event.type) //changer le type de event
 
             {
@@ -177,10 +159,7 @@ int main(int argc, char **argv)
                     break;
 
             }
-
-
         }
-
     }
 
 /*----------------------------------------------------------*/
