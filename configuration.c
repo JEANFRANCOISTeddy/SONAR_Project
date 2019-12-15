@@ -10,7 +10,7 @@ void read(Configuration *conf){
     char work[255];
 
     fflush(stdin);
-    cf = fopen("C:\\Users\\TEDDY\\Desktop\\file.txt","r"); //à modifier
+    cf = fopen("file.txt","r"); //à modifier
     if(cf == NULL){
         printf("\nImpossible d'ouvrir le fichier");
         exit(1);
