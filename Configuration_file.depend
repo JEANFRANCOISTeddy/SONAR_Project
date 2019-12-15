@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1576430486 source:c:\users\teddy\desktop\configuration_file\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"configuration.h"
+
+1576429456 c:\users\teddy\desktop\configuration_file\configuration.h
+

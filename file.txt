@@ -1,0 +1,6 @@
+#SDL_CONFIGURATION
+colorR=0
+colorG=255
+colorB=0
+size_width=810
+size_height=610
