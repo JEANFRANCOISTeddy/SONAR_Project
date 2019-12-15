@@ -14,10 +14,11 @@
 void SDL_ExitWithError(const char *message);
 
 
-
 int main(int argc, char **argv)
 
 {
+
+
     SDL_Window *window = NULL;
 
     SDL_Renderer *renderer = NULL;
@@ -25,6 +26,8 @@ int main(int argc, char **argv)
     SDL_Surface *sfont = NULL;
 
     SDL_Texture *tfont = NULL;
+
+    int i;
 
     //Lancement SDL
     if(SDL_Init(SDL_INIT_VIDEO) != 0)
@@ -98,6 +101,26 @@ int main(int argc, char **argv)
 
        SDL_ExitWithError("Erreur de creation ligne");
 
+
+    /*for(i=100;i>-1000000;i=i-50){     //bal 5pi/6
+
+      if(SDL_RenderDrawLine(renderer,(i*cos(M_PI/6)-(500*sin(M_PI/6))),(i*sin(M_PI/6))+(500*cos(M_PI/6)),400,500)!=0)
+    SDL_ExitWithError("Erreur Boucle");
+
+
+   }*/
+
+
+
+   for(i=-200;i<1000;i=i+25){     //bal 2pi/3
+
+    if(SDL_RenderDrawLine(renderer,(i),500-(500*(sqrt(3)/2)),400,500)!=0)
+    SDL_ExitWithError("Erreur Boucle");
+
+  }
+
+
+
     if( arcRGBA(renderer,400,500,100,180,360,0,255,0,255) != 0 ){   //arc1
 
         SDL_ExitWithError("Erreur creation arc 1");
@@ -116,7 +139,11 @@ int main(int argc, char **argv)
     if( arcRGBA(renderer,400,500,400,180,360,0,255,0,255) != 0 ){  //arc4
 
         SDL_ExitWithError("Erreur creation arc 4");
+
+
     }
+
+
 
 
     SDL_Color text_color = {0,255,0};
@@ -181,7 +208,11 @@ int main(int argc, char **argv)
 
 void SDL_ExitWithError(const char *message)
 {
+  //  FILE* fp;
+    //fp = fopen("/Bureau/save/sonar/toto.txt","w+b");
     SDL_Log("ERREUR : %s > %s\n", message, SDL_GetError()); // pour eviter d'ecrire a chaque fois les log Erreur : ecran , init etc
+    //fwrite("toto.txt",255*sizeof(char),5,fp);
+    //fclose(fp);
     SDL_Quit();
     exit(EXIT_FAILURE);
 }
