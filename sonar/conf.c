@@ -1,3 +1,0 @@
-
-/*1*/ WIDTH_WIN = 810;
-/*2*/ HEIGHT_WIN = 600;
